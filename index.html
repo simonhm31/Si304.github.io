@@ -1,0 +1,188 @@
+# Si304.github.io
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family homepage</title>
+</head>
+<style>
+    html, body{
+        height: 70%;
+        width: 100%;
+    }
+    
+    body{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-color: rgb(144, 137, 209);     
+        
+    }
+
+    #h1{color: rgb(116, 0, 0)}
+    .picture{margin-left: 150px;}
+    #left-paragraph{
+        margin-left: 60px;
+        font-size: 30px ;
+        color:rgb(19, 19, 17)
+    }
+    #left-paragraph span{
+        display:none;float:right;width:40%;margin-left:10px;
+    }
+ 
+    #right-paragraph{
+       
+       
+        font-size: 30px;
+    }
+    #never{
+        font-size: 40px;
+    }
+    .split-para      { display:block;margin:60px;font-size: 30px;}
+       .split-para span { display:block;float:right;width:50%;margin-left:60px;font-size: 30px;}
+
+    #Ma{
+        font-size: 30px;
+        margin-left: 100px;
+        color: yellow
+    }
+    #quiz{
+        font-size: 30px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+  #music-button{background-color:lawngreen}
+  #chicken-picture{float: center; margin-right: 100px; height: 150px; width: 150px;}
+  #chicken-text{margin-right: 70px; float: left;}
+</style>
+
+<body>
+  <h1 id = 'h1' style = ' text-align: center;'> <span id = "never">Never </span>take sides against the family...</h1>
+  <button onClick = "playSong()" id = "music-button" style= "float:right; margin-right: 100px; font-size: 40px; font-style: italic;" >Play music</button>
+  <p class="split-para">Are you planning <br> to take sides against the family? <span id = "Ma">Do you want to go to Ma's favorite website-  
+        <br> <a  href ="https://www.costco.com/" target="_blank" rel="noopener noreferrer">Then click here!!!</a><br>
+        Do you want to go to Skyler's favorite website?
+        <a href = "https://pawpatrolandfriends.com/" target="_blank" rel="noopener noreferrer">Then click here!!</a><br>
+        Do you want to go to Racoonie's favorite website?
+        <a href = "http://eelslap.com/" target="_blank" rel="noopener noreferrer">Then click here!!</a>
+  </span>
+   <br>Be careful señor - you may end up like this guy- </p>
+   
+
+
+                    
+            
+            
+       
+    
+   
+
+
+    <img class = 'picture' src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Crying_GIF.gif">
+   <br><br>
+    <audio id = "myAudio" loop="loop" style = "float: right" 
+         src = "https://upload.wikimedia.org/wikipedia/commons/c/ca/Oh_mia_bela_madunina_%28cans%C3%B2n_milanesa%29.ogg">
+    </audio>
+
+    <br><br><br>
+     </p> 
+    
+
+    <form id = "trivia-form" style = "text-align: center;">
+        <label style = 'text-align: center;' id = "quiz">
+        Test your knowledge of the family. <br>
+        If you get them all wrong we can make things very difficult for you...<br><br><br><br>
+        Who is Skyler's favorite?
+        <select id="trivia-answer">
+            <option value = "a">Ma  </option>
+            <option value = "b">Bennett</option>
+            <option value = "c">Simon</option>
+            <option value = "d">Mom</option>
+            <option value = "e">Racoonie</option>
+            <option value = "f">All of the above</option>
+        </select>
+    </label> <br>
+    <button type="submit">Check answer</button>
+    </form>
+    <div id = "result" style = "text-align: center;"></div>
+    <br><br><br><br>
+    
+    <form id = "second-question" style = "text-align: center;">
+        <label style = "text-align: center; font-size: 30px;" id = "second-question-label">
+            What is Skyler's favorite movie?
+            <select id = "question-answer">
+                <option value = "2a">A bug's life</option>
+                <option value = "2b">Old yeller</option>
+                <option value = "2c">Best in show</option>
+                <option value = "2d">The godfather</option>
+
+            </select>
+        </label>
+        <br>
+        <button type = "submit">Check answer</button>
+    </form>
+    <div id = "resultTwo" style = "text-align: center;"></div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <img id = "chicken-picture" src ="https://upload.wikimedia.org/wikipedia/commons/2/20/Chicken_February_2009-1.jpg" height = "150px" width = "200px">
+        <p id = "chicken-text" style = "font-size: 25px">Ma and Bennett when there is ice cream in the fridge:</p>
+
+
+    </form>
+    <script>
+        function playSong(){
+        document.getElementById("myAudio").play();
+
+    }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+
+ <script>
+ $('#trivia-form').on("submit", function(event){
+     event.preventDefault();
+     var answer = $('#trivia-answer').val();
+     if(answer === 'a'){
+         $('#result').text('No because she gives him so many treats his stomach hurts')
+     }     else if (answer === 'b'){
+         $('#result').text('No because he always takes pictures of Skyler without his consent')
+     } else if(answer === 'c'){
+         $('#result').text('No he is the dad who went to get milk in Skylers life')}
+         else if(answer === "d"){
+             $('#result').text("No because she is most strict")
+         }
+         else if(answer === "e"){
+             $('#result').text("You got it right!!!")
+         }
+     else{$('#result').text("No he doesn't love us all equally")}
+ });
+ 
+$('#second-question').on("submit", function(event){
+    event.preventDefault();
+    var answerTwo = $("#question-answer").val();
+    if(answerTwo === "2a");{
+        $("#resultTwo").text("No he likes a bugs life but he would prefer a dogs life")
+    } 
+     if (answerTwo === "2b"){
+        $("#resultTwo").text('No because Skyler was very disappointed by the ending.')
+    } if (answerTwo === "2c"){
+        $("#resultTwo").text('No because he wanted the dogs to bite the humans and they never did')
+    } else if(answerTwo === "2d"){
+        $("#resultTwo").text('You got it right!! As the don of the family, Skyler sees a lot of himself in Vito Corleone')
+    }
+
+
+
+
+});
+
+
+
+
+
+
+
+
+ </script>
+</body>
+</html>
